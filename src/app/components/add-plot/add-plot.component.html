@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>Create Plot</h3>
+  </div>
+  <div class="panel-body">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Land Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="plot.name" name="name">
+        </div>
+
+        <div class="form-group">
+          <label for="length">Land Length</label>
+          <input type="text" class="form-control" id="length" required [(ngModel)]="plot.length" name="length">
+        </div>
+
+        <div class="form-group">
+          <label for="width">Land Width</label>
+          <input type="text" class="form-control" id="width" required [(ngModel)]="plot.width" name="width">
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newPlot()">Add</button>
+      <button class="btn btn-outline-success" (click)="gotoList()">Goto List</button>
+    </div>
+  </div>
+</div>

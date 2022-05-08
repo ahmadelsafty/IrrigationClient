@@ -1,0 +1,66 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>Irrigation Monitor</h3>
+  </div>
+  <div class="panel-body">
+    <div class="panel panel-primary">
+
+      <table border="1" style="width: 100%;">
+        <tr>
+          <td style="width: 50%" valign="top">
+            <table>
+              <tr>
+                <td>
+                  <div class="panel-heading">
+                    <h4>Plot</h4>
+                  </div>
+                  <div class="panel-body">
+                    <form>
+
+                      <div class="form-group">
+                        <label for="plotSelect">Land Name</label>
+                        <select class="form-select" id="plotSelect" (change)="plotSelected($event)">
+                          <option value="0" selected>Select Plot</option>
+                          <option *ngFor="let plot of plotsList" [value]="plot.id">{{plot.name}}</option>
+                        </select>
+                      </div>
+
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="warningsDiv" class="row">
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td>
+
+          </td>
+          <td style="width: 50%" valign="top">
+            <div class="panel-heading">
+              <h4>Plot Sensors</h4>
+            </div>
+            <div class="panel-body" *ngIf="currentPlotSensors.length > 0">
+              <form>
+                <div class="row">
+                  <div class="col-3 col-md-4 col-sm-6" *ngFor="let sensor of currentPlotSensors"
+                       [ngStyle]="{'background-color':getColor(sensor.status)}">
+                    <input type="checkbox" [checked]="sensor.status" value="{{sensor.id}}" id="{{sensor.id}}"
+                           (change)="sensorCheckChanged($event)">
+                    &nbsp;
+                    <label for="{{sensor.id}}"> Sensor: {{sensor.id}}</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+

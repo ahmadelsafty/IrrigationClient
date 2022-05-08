@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>All Plots</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Plot ID</th>
+        <th>Plot Name</th>
+        <th>Length</th>
+        <th>Width</th>
+        <th>Area</th>
+        <th>Sensors Count</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let plot of plotsList">
+          <td>{{plot.id}}</td>
+          <td>{{plot.name}}</td>
+          <td>{{plot.length}}</td>
+          <td>{{plot.width}}</td>
+          <td>{{plot.area}}</td>
+          <td>{{plot.sensorsCount}}</td>
+          <td><button (click)="updatePlot(plot.id)" class="btn btn-danger">Edit</button></td>
+          <td><button (click)="deletePlot(plot.id)" class="btn btn-danger">Delete</button></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

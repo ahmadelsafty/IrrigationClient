@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+System name:
+  IrrigationClient
+####
+Used Technologies:
+  Angular2+, CSS
+####
+Notes:
+  In Configuration window, you have to enter non-zero value in all fields to activate the Sensor checking Job.
